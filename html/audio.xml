@@ -2,22 +2,28 @@
 <Audio version="1.0" gain="-10dB">
     <Chain>
         <!-- One sawtooth -->
-        <Mixer>
-            <OscillatorNode type="sawtooth">
-                <frequency follow="freqValue, change, e.target.value" map="0,100,60,72,MIDI"></frequency>
-            </OscillatorNode>
-            
-            <Send output="#saw-tone"></Send>
-        </Mixer>
+        <OscillatorNode type="sawtooth">
+            <frequency follow="freqValue, change, e.target.value" map="0,100,60,72,MIDI"></frequency>
+        </OscillatorNode>
 
-        <GainNode id="saw-tone">
+        <GainNode>
             <gain value="0" follow="sawtone, change, e.target.value"></gain>
-            <Send output="#overall-gain"></Send>
         </GainNode>
     </Chain>
 
     <Chain>
-        <!-- Sawtooth chord -->
+        <!-- One sine -->
+        <OscillatorNode type="sine">
+            <frequency follow="freqValue, change, e.target.value" map="0,100,60,72,MIDI"></frequency>
+        </OscillatorNode>
+
+        <GainNode>
+            <gain value="0" follow="sinetone, change, e.target.value"></gain>
+        </GainNode>
+    </Chain>
+
+    <Chain>
+    <!-- Sawtooth chord -->
         <Mixer>
             <OscillatorNode type="sawtooth">
                 <frequency follow="freqValue, change, e.target.value" map="0,100,60,72,MIDI"></frequency>
@@ -30,29 +36,10 @@
             <OscillatorNode type="sawtooth">
                 <frequency follow="freqValue, change, e.target.value" map="0,100,67,79,MIDI"></frequency>
             </OscillatorNode>
-            
-            <Send output="#saw-chord"></Send>
         </Mixer>
 
-        <GainNode id="saw-chord">
+        <GainNode>
             <gain value="0" follow="sawchord, change, e.target.value"></gain>
-            <Send output="#overall-gain"></Send>
-        </GainNode>
-    </Chain>
-
-    <Chain>
-        <!-- One sine -->
-        <Mixer>
-            <OscillatorNode type="sine">
-                <frequency follow="freqValue, change, e.target.value" map="0,100,60,72,MIDI"></frequency>
-            </OscillatorNode>
-            
-            <Send output="#sine-tone"></Send>
-        </Mixer>
-
-        <GainNode id="sine-tone">
-            <gain value="0" follow="sinetone, change, e.target.value"></gain>
-            <Send output="#overall-gain"></Send>
         </GainNode>
     </Chain>
 
@@ -70,17 +57,10 @@
             <OscillatorNode type="sine">
                 <frequency follow="freqValue, change, e.target.value" map="0,100,67,79,MIDI"></frequency>
             </OscillatorNode>
-            
-            <Send output="#sine-chord"></Send>
         </Mixer>
-
-        <GainNode id="sine-chord">
+        
+        <GainNode>
             <gain value="0" follow="sinechord, change, e.target.value"></gain>
-            <Send output="#overall-gain"></Send>
         </GainNode>
     </Chain>
-
-    <GainNode id="overall-gain">
-        <gain value="0" follow="volslider, input, e.target.value"></gain>
-    </GainNode>
 </Audio>
