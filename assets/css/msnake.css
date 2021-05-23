@@ -1,0 +1,37 @@
+#content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: auto;
+}
+
+.gameVals {
+    display: none;
+}
+
+#game-content {
+    grid-column: 1/2;
+    margin: auto;
+}
+
+#startGame {
+    display: block;
+    margin: auto;
+    padding: 0.3em 1em;
+    margin-bottom: 2em;
+    background-color: #93AD7D;
+    font-size: 20px;
+}
+
+#info {
+    grid-column: 2/3;
+}
+
+#tonebtn {
+    background-color: #B4BFFA;
+    font-size: 15px;
+}
+
+#wavebtn {
+    background-color: #AD8F86;
+    font-size: 15px;
+}

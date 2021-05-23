@@ -1,3 +1,17 @@
 body {
-    background-color: brown;
+    background-color: #FAC5B4;
+    padding: 2em;
 }
+
+header {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+#flex-box {
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+
+/* #93AD7D, #B4BFFA, #E0F9CC, #FAC5B4, #AD8F86 */

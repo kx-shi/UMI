@@ -9,11 +9,37 @@
 
 
 	<body>
-        <h1><a href="../index.html">Back to home page</a></h1>
-        <h2>Musical Snake</h2>
+		<header>
+			<h1>Musical Snake</h1>
+			<h2><a href="../index.html">Back to home page</a></h2>
+		</header>
 
-        <canvas id="gameCanvas" width="500" height="500">
-        </canvas>
+		<button id="startGame">Start game</button>
+
+		<div id="content">
+
+			<div id="game-content">
+				<canvas id="gameCanvas" width="400" height="250"></canvas>
+
+				<div id="controls">
+					<button id="tonebtn">tone</button>
+					<button id="wavebtn">sine</button>
+				</div>
+			</div>
+
+			<div id="info">
+				<p>Instructions: </p>
+				<p>Lorem Ipsum</p>
+			</div>
+
+
+		</div>
+
+		<button id="freqValue" class="gameVals" value="220"></button>
+		<button id="sinetone" class="gameVals" value="1"></button>
+		<button id="sawtone" class="gameVals" value="0"></button>
+		<button id="sinechord" class="gameVals" value="1"></button>
+		<button id="sawchord" class="gameVals" value="0"></button>
 
         <!-- Scripts below -->
         <script src="../assets/js/msnake.js"></script>
