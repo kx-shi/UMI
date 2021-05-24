@@ -214,6 +214,10 @@ function createFood() {
     foodDownX = getRandomPos(0, gameCanvas.width - 10);
     foodDownY = getRandomPos(0, gameCanvas.height - 10);
 
+    if(foodUpX == foodDownX && foodUpY == foodDownY) { // don't generate food on top of each other
+        createFood();
+    }
+
     snake.forEach(function isFoodOnSnake(snakePart) { // make sure we don't generate food on snake
         const foodIsOnSnake = (snakePart.x == foodUpX && snakePart.y == foodUpY);
         if(foodIsOnSnake) {

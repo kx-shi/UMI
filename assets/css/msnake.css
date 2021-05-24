@@ -13,6 +13,11 @@
     margin: auto;
 }
 
+#volumeControls > * {
+    margin-top: 2em;
+    display: inline;
+}
+
 #startGame {
     display: block;
     margin: auto;
